@@ -1,11 +1,73 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Badge from '../components/badge.astro';
 import Layout from '../layouts/Layout.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import Social from '../components/Social.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title='Portafolio de Luis Hernández - Desarrollador y Programador Web Full Stack' description=''>
+	
+	<SectionContainer class="pt-44 py-22">
+		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+			Hola!!, soy Luis
+			<a 
+				href="https://linkedin.com/in/luhecu"
+				target="_blank"
+				rel="noopener"
+				class="flex justify-center items-center"
+			>
+				<Badge>Disponible para trabajar</Badge>
+			</a>
+		</h1>
+		<h2 class="text-2xl text-wrap">
+			<span>
+				Junior Full Stack Developer.
+			</span>
+			<span class="text-yellow-100/90">
+				Especializado en Desarrollo 
+				Backend de REST API's y Base de Datos.
+			</span> 
+			<span class="text-red-100/90 ">
+				De San José, Costa Rica 🇨🇷. 
+			</span>
+			<span class="opacity-80 ">
+				Apasionado de las Tecnologías Emergentes,
+				 Bases de Datos e Inteligencia Artificial
+			</span>
+		</h2>
+
+		<ul class="flex flex-row justify-start items-center gap-x-3 mt-10">
+			<li class="hover:mx-3">
+				<Social href="https://linkedin.com/in/luhecu">
+					<LinkedInIcon class="size-7"/>
+					<span>LinkedIn</span>
+				</Social>
+			</li>
+			<li class="hover:mx-3">
+				<Social href="https://github.com/LUHECU">
+					<GitHubIcon class="size-7"/>
+					<span>GitHub</span>
+				</Social>
+			</li>
+			<li class="hover:mx-5">
+				<Social href="mailto:luis.m.hernandez.cruz@gmail.com">
+					<MailIcon class="size-7"/>
+					<span>luis.m.hernandez.cruz@gmail.com</span>
+				</Social>
+			</li>
+		</ul>
+	</SectionContainer>
+
+	<section class="w-full mx-auto lg:w-[740px]">
+		<Experience/>
+	</section>
+
+
 </Layout>
