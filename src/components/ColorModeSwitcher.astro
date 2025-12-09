@@ -1,0 +1,54 @@
+---
+import DarkModeIcon from "./icons/DarkModeIcon.astro";
+import LightModeIcon from "./icons/LightModeIcon.astro"
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<button
+	id="theme-toggle"
+	data-tooltip-target="tooltip-toggle"
+	type="button"
+	class="rounded-lg text-sm"
+>
+	<LightModeIcon/>
+	<DarkModeIcon/>
+	
+</button>
+
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
+  const toggleBtn = document.getElementById('theme-toggle');
+  const tooltipText = document.getElementById('tooltip-text');
+
+  // Inicializar iconos según localStorage o prefers-color-scheme
+  const isDark =
+    localStorage.getItem('theme') === 'dark' ||
+    (!localStorage.getItem('theme') &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  if (isDark) {
+    document.documentElement.classList.add('dark');
+    lightIcon.classList.remove('hidden');
+    darkIcon.classList.add('hidden');
+  } else {
+    document.documentElement.classList.remove('dark');
+    darkIcon.classList.remove('hidden');
+    lightIcon.classList.add('hidden');
+  }
+
+  // Evento click
+  toggleBtn.addEventListener('click', () => {
+    const darkModeActive = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', darkModeActive ? 'dark' : 'light');
+
+    darkIcon.classList.toggle('hidden');
+    lightIcon.classList.toggle('hidden');
+  });
+});
+</script>

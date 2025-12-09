@@ -11,13 +11,19 @@ const { href } = Astro.props;
     rel="noopener noreferer"
     class="
         rounded-full border
-        border-white flex 
+        dark:border-white
+        dark:text-white/90
+        text-zinc-900/90
+        border-zinc-800 
+        flex 
         justify-center 
         items-center 
         gap-x-2 p-3
-        bg-white/5
+        dark:bg-white/10
+        bg-zinc-800/5
         hover:scale-110 
-        hover:bg-white/10
+        dark:hover:bg-white/20
+        hover:bg-zinc-800/20
         transition-discrete
     "
 >

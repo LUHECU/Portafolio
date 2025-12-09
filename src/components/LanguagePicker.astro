@@ -1,0 +1,82 @@
+---
+import LanguageIcon from './icons/LanguageIcon.astro';
+import { languages } from '@i18n/ui';
+import { getLangFromUrl, getPathFromUrl, useTranslations } from "@i18n/utils";
+import { Languages } from '@i18n/ui';
+
+const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+
+const currentPath = getPathFromUrl(Astro.url) || '';
+---
+
+
+<div class=
+"flex items-center ml-3 relative
+rounded-lg text-sm"
+>
+    <details id="langDropdown" class="relative group">
+        <summary class="list-none cursor-pointer flex items-center space-x-2 select-none">
+            <span class="sr-only dark:text-amber-50 text-zinc-800">Open language Menu</span>
+            <span class="dark:text-amber-50 text-zinc-800 hover:text-blue-500 flex items-center space-x-1">
+                <LanguageIcon/>
+                {currentLang.toUpperCase()}
+            </span>
+        </summary>
+
+        <div
+        class="absolute sm:mt-3 mt-2 md:right-0 z-50 w-48 text-base list-none bg-gray-100/80 divide-y divide-gray-100 rounded shadow
+                dark:bg-gray-700 dark:divide-gray-600 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+        id="langDropdownMenu"
+        >
+            <ul id="langList" class="py-1">
+                {Object.entries(languages).map(([lang]) => (
+                    <li data-lang={lang}>
+                        <a
+                        href={`/${lang}/${currentPath}`}
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                        {lang === Languages.EN && 
+                          t('lang.en') || t('lang.es')
+                        }
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </details>
+</div>
+
+<script is:inline>
+  const langDropdown = document.getElementById('langDropdown');
+  const langMenu = document.getElementById('langDropdownMenu');
+
+  langDropdown?.addEventListener('toggle', () => {
+    if (langDropdown.open) {
+      const scrollHeight = langMenu.scrollHeight;
+      langMenu.style.maxHeight = scrollHeight + 'px';
+      langMenu.style.opacity = 1;
+    } else {
+      langMenu.style.maxHeight = '0';
+      langMenu.style.opacity = 0;
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langDropdown.contains(e.target)) {
+      langDropdown.open = false;
+    }
+  });
+
+  const langNestedDetails = langMenu.querySelectorAll('details');
+  langNestedDetails.forEach(d => {
+    const innerlangMenu = d.querySelector('ul');
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        innerlangMenu.style.maxHeight = innerlangMenu.scrollHeight + 'px';
+      } else {
+        innerlangMenu.style.maxHeight = '0';
+      }
+    });
+  });
+</script>

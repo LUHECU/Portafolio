@@ -1,6 +1,10 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-import { EXPERIENCE } from "../data/experience.js"
+import { EXPERIENCE_EN, EXPERIENCE_ES } from "../data/experience.ts"
+import { getLangFromUrl } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const EXPERIENCE = lang === 'es' ? EXPERIENCE_ES : EXPERIENCE_EN;
 ---
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">                  
     {

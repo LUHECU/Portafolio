@@ -1,18 +1,24 @@
 ---
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+
 interface Props {
+  id: number;
   title: string;
   date: string;
-  description: string;
+  description: string[];
   company: string;
   location: string;
   current: boolean;
 }
 
-const { title, date, company, description, location, current } = Astro.props;
+const { id, title, date, company, description, location, current } = Astro.props;
+const state = current ? "bg-green-500" : "bg-gray-700/50";
 
-const state = current ? "dark:bg-green-500" : "dark:bg-gray-700";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
-
+<label hidden>{lang}</label>
 <div class={`absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 ${state}`}></div>
 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{date}</time>
 <div class="flex justify-between items-center mb-2">
@@ -27,6 +33,54 @@ const state = current ? "dark:bg-green-500" : "dark:bg-gray-700";
         <span class="text-sm font-normal text-gray-500 dark:text-gray-400 ms-2">{location}</span>
     </div>
 </div>
-<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
+
+<div class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400" id={`container-${id}`}>
+    <ul class="ms-5 list-disc">
+        {description.map((item, index) => (
+            // A los items mayores al índice 1 (el 3ro en adelante), les ponemos la clase 'hidden' y una clase marcadora 'extra-item'
+            <li class={index >= 2 ? "hidden extra-item" : ""}>
+                {item}
+            </li>
+        ))}
+    </ul>
+
+    {description.length > 2 && (
+        <button 
+        id={`btn-${id}`} 
+        class="mt-2 flex items-center focus:outline-none toggle-btn"
+        >
+            <span class="btn-text text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline mt-2">
+                {t("exp.readMore")}
+            </span>
+        </button>
+    )}
+</div>
+
+<script define:vars={{ id }}>
+    
+    const container = document.getElementById(`container-${id}`);
+    const btn = document.getElementById(`btn-${id}`);
+    const lang = document.querySelector('label').textContent;
+
+    
+    if (btn && container) {
+        const extraItems = container.querySelectorAll('.extra-item');
+        const btnText = btn.querySelector('.btn-text');
+        let isExpanded = false;
+
+        btn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            
+            extraItems.forEach(item => {
+                item.classList.toggle('hidden');
+            });
+            if (lang === 'es') {
+                btnText.textContent = isExpanded ? "Mostrar menos" : "Leer más...";
+            } else {
+                btnText.textContent = isExpanded ? "Show less" : "Read more...";
+            }
+        });
+    }
+</script>
 
   

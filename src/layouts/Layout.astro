@@ -1,7 +1,9 @@
 ---
-import Header from "../components/Header.astro";
-import '../styles/global.css'; 
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import '@styles/global.css'; 
 import "@fontsource-variable/onest"
+import { getLangFromUrl } from "@i18n/utils";
 
 interface Props {
 	title: string,
@@ -9,23 +11,38 @@ interface Props {
 }
 
 const {description, title} = Astro.props
+const lang = getLangFromUrl(Astro.url);
+
 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content={description} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="https://github.com/LUHECU.png" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
+		
+
+		<script is:inline>
+			if (
+				localStorage.getItem('theme') === 'dark' ||
+				(!('theme' in localStorage) &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		</script>
 	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Header/>
+	<body class="dark:bg-zinc-800 bg-zinc-100">
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
@@ -38,10 +55,9 @@ const {description, title} = Astro.props
 		scroll-behavior: smooth;
 	}
 	body{
-		background-color: rgb(15, 15, 15);
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
+		display: grid;
+		min-height: 100dvh;
+		grid-template-rows: auto 1fr auto;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

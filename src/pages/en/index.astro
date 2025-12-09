@@ -1,0 +1,122 @@
+---
+import Layout from '@layouts/Layout.astro';
+import LinkedInIcon from '@components/icons/LinkedIn.astro';
+import GitHubIcon from '@components/icons/GitHub.astro';
+import MailIcon from '@components/icons/Mail.astro';
+import Social from '@components/Social.astro';
+import Experience from '@components/Experience.astro';
+import SectionContainer from '@components/SectionContainer.astro';
+import Briefcase from '@components/icons/Briefcase.astro';
+import Badge from '@components/Badge.astro';
+import { indexStyles } from '@styles/styles';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+import InboxStack from '~/components/icons/InboxStack.astro';
+import EnvelopeIcon from '~/components/icons/EnvelopeIcon.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<Layout title='Luis Hernández Portafolio - Full Stack Developer' description=''>
+	<main class={indexStyles.main}>
+		<SectionContainer id="top" class={indexStyles.sectionContainer}>
+			<h1 class={indexStyles.h1AboutMe}>
+				Hi!!, I'm Luis
+				<a 
+					href="https://linkedin.com/in/luhecu"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+				>
+					<Badge>Available to work</Badge>
+				</a>
+			</h1>
+			<h2 class={indexStyles.h2AboutMe}>
+				<span class={indexStyles.span1AboutMe}>
+					Full Stack Developer
+				</span>
+				<span class={indexStyles.span2AboutMe}>
+					with solid knowledge in Backend Development 
+					of REST API's and Databases.
+				</span> 
+				<span class={indexStyles.span3AboutMe}>
+					Passionate about Emerging Technologies,
+					Databases, Artificial Intelligence and its development.
+				</span>
+			</h2>
+
+			<ul class={indexStyles.socialUl}>
+				<li class={indexStyles.socialLi1}>
+					<Social href="https://linkedin.com/in/luhecu">
+						<LinkedInIcon class={indexStyles.socialIcon}/>
+						<span>LinkedIn</span>
+					</Social>
+				</li>
+				<li class={indexStyles.socialLi2}>
+					<Social href="https://github.com/LUHECU">
+						<GitHubIcon class={indexStyles.socialIcon}/>
+						<span>GitHub</span>
+					</Social>
+				</li>
+				<li class={indexStyles.socialLi3}>
+					<Social href="mailto:luis.m.hernandez.cruz@gmail.com">
+						<MailIcon class={indexStyles.socialIcon}/>
+						<span>luis.m.hernandez.cruz@gmail.com</span>
+					</Social>
+				</li>
+			</ul>
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class={indexStyles.h2}>
+				<Briefcase class={indexStyles.icon}/>
+				Work Experience
+			</h2>	
+			<Experience lang="lang"/>
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class={indexStyles.h2}>
+				<InboxStack class={indexStyles.icon}/>
+				Projects
+			</h2>	
+		</SectionContainer>
+
+		<SectionContainer id="contact">
+			<h2 class={indexStyles.h2}>
+				<EnvelopeIcon class={indexStyles.icon}/>
+				Contact
+			</h2>
+		</SectionContainer>
+	</main>	
+
+
+</Layout>
+
+
+<script is:inline>
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll("nav ul li a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      const bottom = top + section.offsetHeight;
+
+      if (scrollY >= top && scrollY < bottom) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    links.forEach(link => {
+      link.classList.remove("text-blue-500", "font-semibold");
+
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("text-blue-500", "font-semibold");
+      }
+    });
+  });
+</script>

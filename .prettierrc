@@ -1,0 +1,21 @@
+{
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "endOfLine": "auto",
+    "plugins": [
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss"
+    ],
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        }
+    ]
+}
