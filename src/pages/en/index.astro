@@ -11,7 +11,7 @@ import Badge from '@components/Badge.astro';
 import { indexStyles } from '@styles/styles';
 import { getLangFromUrl, useTranslations } from '~/i18n/utils';
 import InboxStack from '~/components/icons/InboxStack.astro';
-import EnvelopeIcon from '~/components/icons/EnvelopeIcon.astro';
+import EnvelopeIcon from '@components/icons/EnvelopeIcon.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
