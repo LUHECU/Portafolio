@@ -31,6 +31,9 @@
       ],
       "@i18n/*": [
         "src/i18n/*"
+      ],
+      "@public/*": [
+        "public/"
       ]
     },
     "jsx": "react-jsx",
