@@ -1,7 +1,7 @@
 export const indexStyles = {
     "main": "mx-5 md:mx-25",
     "sectionContainer": " pt-22 py-11 lg:pt-44 lg:py-22",
-    "h1AboutMe": "dark:text-white text-zinc-800/85 text-5xl font-bold flex flex-col lg:flex-row justify-center items-center gap-y-4 lg:gap-x-4 pb-10",
+    "h1AboutMe": "dark:text-white text-zinc-800/85 text-5xl font-bold flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-y-4 lg:gap-x-4 pb-10",
     "h2AboutMe": "text-3xl text-center lg:text-left sm:text-xl md:text-1xl lg:text-2xl text-pretty",
     "span1AboutMe": "text-2xl dark:text-amber-50 text-zinc-600",
     "span2AboutMe": "text-2xl dark:text-yellow-200/90 text-yellow-500/70",

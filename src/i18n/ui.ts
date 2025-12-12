@@ -24,6 +24,15 @@ export const ui = {
 
     "exp.readMore": "Read more...",
     "exp.showLess": "Show less",
+
+    "contact.thankYou": "Thank you for reaching out!",
+    "contact.successMessage": "Your message has been sent successfully.",
+    "contact.errorMessage": "There was an error sending your message. Please try again later.",
+    "contact.name": "Name",
+    "contact.email": "Email",
+    "contact.message": "Message",
+    "contact.send": "Send",
+    "contact.messagePlaceholder": "Please describe your inquiry or project...",
   },
   es: {
     "lang.en": "Inglés",
@@ -38,5 +47,14 @@ export const ui = {
 
     "exp.readMore": "Leer más...",
     "exp.showLess": "Leer menos",
+
+    "contact.thankYou": "¡Gracias por contactarme!",
+    "contact.successMessage": "Tu mensaje ha sido enviado con éxito.",
+    "contact.errorMessage": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+    "contact.name": "Nombre",
+    "contact.email": "Correo electrónico",
+    "contact.message": "Mensaje",
+    "contact.send": "Enviar",
+    "contact.messagePlaceholder": "Por favor describe tu consulta o proyecto...",
   },
 };

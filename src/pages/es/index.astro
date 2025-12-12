@@ -12,6 +12,7 @@ import { indexStyles } from '@styles/styles';
 import { getLangFromUrl } from '~/i18n/utils';
 import InboxStack from '~/components/icons/InboxStack.astro';
 import EnvelopeIcon from '~/components/icons/EnvelopeIcon.astro';
+import Contact from '~/components/Contact.astro';
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -87,6 +88,7 @@ const lang = getLangFromUrl(Astro.url);
 				<EnvelopeIcon class={indexStyles.icon}/>
 				Contacto
 			</h2>
+			<Contact/>
 		</SectionContainer>
 
 	</main>	

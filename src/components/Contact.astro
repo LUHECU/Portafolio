@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl } from '@i18n/utils';
+import { useTranslations } from '@i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="flex justify-center items-center text-gray-900 dark:text-gray-100 p-10">
+    <form class="flex flex-col gap-4" action="https://formspree.io/f/mdkqpzow" method="post">
+        <div class="flex justify-between gap-5 @max-sm:flex-col">
+            <div class="flex flex-col gap-1">
+                <label for="name">{t("contact.name")}</label>
+                <input class="rounded-2xl border p-1 w-2xs" type="text" id="name" name="name" required />
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="email">{t("contact.email")}</label>
+                <input class="rounded-2xl border p-1 w-2xs" type="email" id="email" name="email" required />
+            </div>
+        </div>
+        <div class="flex flex-col gap-1">
+            <label for="message">{t("contact.message")}</label>
+            <textarea class="rounded-2xl border p-1 px-2 placeholder-gray-900/50 dark:placeholder-gray-100/50" id="message" name="message" rows="4" placeholder={t("contact.messagePlaceholder")} required />
+        </div>
+        <div class="flex justify-end items-center">
+            <button class="rounded-full border p-1 w-25" type="submit">{t("contact.send")}</button>
+        </div>
+    </form>
+</div>
