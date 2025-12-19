@@ -13,6 +13,7 @@ import { getLangFromUrl, useTranslations } from '~/i18n/utils';
 import InboxStack from '~/components/icons/InboxStack.astro';
 import EnvelopeIcon from '@components/icons/EnvelopeIcon.astro';
 import Contact from '~/components/Contact.astro';
+import Project from '~/components/Project.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -81,6 +82,7 @@ const t = useTranslations(lang);
 			<h2 class={indexStyles.h2}>
 				<InboxStack class={indexStyles.icon}/>
 				Projects
+				<Project/>
 			</h2>	
 		</SectionContainer>
 

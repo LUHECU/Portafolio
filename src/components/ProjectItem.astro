@@ -1,0 +1,47 @@
+---
+import Badge from './Badge.astro';
+import Stack from './Stack.astro';
+
+interface Props {
+    id: string,
+    title: string,
+    description: string,
+    stack: string[],
+    image: string,
+    status: string,
+    url: string
+}
+
+const { id, title, description, stack, image, status, url } = Astro.props;
+---
+
+<div id={id} class="text-gray-900 dark:text-gray-100 p-10">
+    <div class="flex flex-col justify-center items-center">
+        <h3 class="text-2xl font-bold mb-5">{title}</h3>
+        <ul class="flex flex-row gap-1 mb-3">
+            {
+                stack.map(item => (
+                    <li><Stack>{item}</Stack></li>
+                ))
+            }
+        </ul>
+        <picture>
+            <img class="rounded-xl" src={image}/>
+        </picture>
+
+        <p>
+            {description}
+        </p>
+
+        <a class="font-medium 
+        me-2 px-2.5 py-0.5 mt-4 
+        rounded-full 
+        text-zinc-100
+        bg-blue-500" 
+        href={url} hidden={url?false:true}>
+            Visitar
+        </a>
+
+    </div>
+</div>
+

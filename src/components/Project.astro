@@ -1,0 +1,20 @@
+---
+import { PROJECTS_EN, PROJECTS_ES } from "@data/projects";
+import { getLangFromUrl } from "~/i18n/utils";
+import ProjectItem from "./ProjectItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+
+const projects = lang === "es"? PROJECTS_ES:PROJECTS_EN;
+
+---
+
+<div>
+    <div>
+        {
+            projects.map(project => (
+                <ProjectItem {...project}/>
+            ))
+        }
+    </div>
+</div>
