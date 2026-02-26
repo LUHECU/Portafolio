@@ -34,7 +34,9 @@ export const ui = {
     "contact.send": "Send",
     "contact.messagePlaceholder": "Please describe your inquiry or project...",
 
-    "resume":"Resume"
+    "resume":"Resume",
+
+    "visit":"Visit"
   },
   es: {
     "lang.en": "Inglés",
@@ -59,6 +61,7 @@ export const ui = {
     "contact.send": "Enviar",
     "contact.messagePlaceholder": "Por favor describe tu consulta o proyecto...",
 
-    "resume":"CV"
+    "resume":"CV",
+    "visit":"Visitar"
   },
 };
