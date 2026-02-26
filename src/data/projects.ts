@@ -13,9 +13,9 @@ export const PROJECTS_EN = [
         "title":"JPNG to WEBP Converter",
         "description":"Small desktop python app made to convert PNG files to WEBP files ",
         "stack":["Astro", "JavaScript", "CSS"],
-        "image":"/images/calculo-simple-1.webp",
+        "image":"/images/PNG_to_WEBP_Converter.webp",
         "status":"Completed",
-        "url":"https://calculo-simple.vercel.app/"
+        "url":"https://github.com/LUHECU/PNG-to-WEBP-Converter.git"
     },
 ]
 
