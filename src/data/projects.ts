@@ -36,7 +36,7 @@ export const PROJECTS_ES = [
         "stack":["Python"],
         "image":"/images/PNG_to_WEBP_Converter.webp",
         "status":"Terminado",
-        "url":"https://calculo-simple.vercel.app/"
+        "url":"https://github.com/LUHECU/PNG-to-WEBP-Converter.git"
     },
 
 ]
