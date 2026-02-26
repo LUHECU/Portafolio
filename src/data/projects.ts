@@ -12,7 +12,7 @@ export const PROJECTS_EN = [
         "id": "2",
         "title":"JPNG to WEBP Converter",
         "description":"Small desktop python app made to convert PNG files to WEBP files ",
-        "stack":["Astro", "JavaScript", "CSS"],
+        "stack":["Python"],
         "image":"/images/PNG_to_WEBP_Converter.webp",
         "status":"Completed",
         "url":"https://github.com/LUHECU/PNG-to-WEBP-Converter.git"
