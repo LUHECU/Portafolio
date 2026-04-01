@@ -4,7 +4,7 @@ export const EXPERIENCE_EN = [
         title: "Full Stack Developer",
         company: "Freelance Services",
         location: "Remote",
-        date: "Aug 2025 - Present",
+        date: "Aug 2025 - Dec 2025",
         description: [
         {
             name: "Project 1: Instagram Customer Support Chatbot (WATI — production with real users)",
@@ -26,7 +26,7 @@ export const EXPERIENCE_EN = [
                     "Client reference available upon request."
                 ]
         }],
-        current: true
+        current: false
     },
     {
         id: 2,
@@ -64,7 +64,7 @@ export const EXPERIENCE_ES = [
         title: "Desarrollador Full Stack",
         company: "Freelance",
         location: "Remoto",
-        date: "Ago 2025 - Dec 2025",
+        date: "Ago 2025 - Dic 2025",
         description: [
             {
                 name: "Proyecto 1: Chatbot de Atención al Cliente en Instagram (WATI – Producción)",
