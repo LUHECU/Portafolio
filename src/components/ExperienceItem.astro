@@ -1,11 +1,16 @@
 ---
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 
+interface Project {
+  name: string;
+  desc: string[];
+}
+
 interface Props {
   id: number;
   title: string;
   date: string;
-  description: string[];
+  description: Project[];
   company: string;
   location: string;
   current: boolean;
@@ -35,16 +40,24 @@ const t = useTranslations(lang);
 </div>
 
 <div class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400" id={`container-${id}`}>
-    <ul class="ms-5 list-disc">
-        {description.map((item, index) => (
+    <ul class="ms-5">
+        {description.map((project, index) => (
             // A los items mayores al índice 1 (el 3ro en adelante), les ponemos la clase 'hidden' y una clase marcadora 'extra-item'
-            <li class={index >= 2 ? "hidden extra-item" : ""}>
-                {item}
+            <li class={index >= 1 ? "hidden extra-item" : ""}>
+
+                <h3 class="text-md font-semibold text-gray-900/85 dark:text-white/85 mb-1">{project.name}</h3>
+
+                <ul class="mb-3 list-disc">
+                    {project.desc.map((item, i) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+                
             </li>
         ))}
     </ul>
 
-    {description.length > 2 && (
+    {description.length > 1 && (
         <button 
         id={`btn-${id}`} 
         class="mt-2 flex items-center focus:outline-none toggle-btn"
