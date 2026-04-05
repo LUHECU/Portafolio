@@ -1,22 +1,30 @@
-# Astro Starter Kit: Basics
+# 🚀 Personal Portfolio — LUHECU
 
-```sh
-pnpm create astro@latest -- --template basics
+> **[🌐 Live Demo](https://luhecu.com)**
+
+---
+
+## 🇺🇸 English
+
+### About
+
+This is my personal portfolio website where I showcase my projects, skills, and resume. Built with modern web technologies to deliver a fast and visually polished experience.
+
+### 🛠️ Tech Stack
+
+| Technology | Description |
+|---|---|
+| [Astro](https://astro.build) | Core framework — fast static site generation |
+| [React](https://react.dev) | Interactive UI components |
+| [TypeScript](https://www.typescriptlang.org) | Type-safe JavaScript |
+| [Tailwind CSS](https://tailwindcss.com) | Utility-first styling |
+| [Flowbite](https://flowbite.com) | UI component library |
+| [Onest Font](https://fonts.google.com/specimen/Onest) | Custom variable typography |
+| [pnpm](https://pnpm.io) | Fast, efficient package manager |
+
+### 📁 Project Structure
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
 │   └── favicon.svg
@@ -25,24 +33,115 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
+├── astro.config.mjs
+├── tailwind.config.js
+├── tsconfig.json
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### ⚙️ Getting Started
 
-## 🧞 Commands
+**Prerequisites:** Node.js and pnpm installed.
 
-All commands are run from the root of the project, from a terminal:
+```bash
+# 1. Clone the repository
+git clone https://github.com/LUHECU/Portafolio.git
+cd Portafolio
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+# 2. Install dependencies
+pnpm install
 
-## 👀 Want to learn more?
+# 3. Start the development server
+pnpm dev
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The dev server will be available at `http://localhost:4321`.
+
+### 🧞 Commands
+
+| Command | Action |
+|---|---|
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Start local dev server at `localhost:4321` |
+| `pnpm build` | Build production site to `./dist/` |
+| `pnpm preview` | Preview production build locally |
+| `pnpm astro ...` | Run Astro CLI commands |
+
+### 📦 Deployment
+
+This project is deployed on **[Vercel](https://vercel.com)**. Any push to the `master` branch triggers an automatic deployment.
+
+---
+
+## 🇪🇸 Español
+
+### Acerca del proyecto
+
+Este es mi portafolio personal donde muestro mis proyectos, habilidades y currículum. Construido con tecnologías web modernas para ofrecer una experiencia rápida y visualmente pulida.
+
+### 🛠️ Stack Tecnológico
+
+| Tecnología | Descripción |
+|---|---|
+| [Astro](https://astro.build) | Framework principal — generación de sitios estáticos rápidos |
+| [React](https://react.dev) | Componentes de UI interactivos |
+| [TypeScript](https://www.typescriptlang.org) | JavaScript con tipado estático |
+| [Tailwind CSS](https://tailwindcss.com) | Estilos con clases utilitarias |
+| [Flowbite](https://flowbite.com) | Librería de componentes UI |
+| [Onest Font](https://fonts.google.com/specimen/Onest) | Tipografía variable personalizada |
+| [pnpm](https://pnpm.io) | Gestor de paquetes rápido y eficiente |
+
+### 📁 Estructura del Proyecto
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+├── astro.config.mjs
+├── tailwind.config.js
+├── tsconfig.json
+└── package.json
+```
+
+### ⚙️ Primeros Pasos
+
+**Requisitos previos:** Tener Node.js y pnpm instalados.
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/LUHECU/Portafolio.git
+cd Portafolio
+
+# 2. Instalar dependencias
+pnpm install
+
+# 3. Iniciar el servidor de desarrollo
+pnpm dev
+```
+
+El servidor estará disponible en `http://localhost:4321`.
+
+### 🧞 Comandos
+
+| Comando | Acción |
+|---|---|
+| `pnpm install` | Instalar dependencias |
+| `pnpm dev` | Iniciar servidor local en `localhost:4321` |
+| `pnpm build` | Compilar el sitio para producción en `./dist/` |
+| `pnpm preview` | Previsualizar la build de producción localmente |
+| `pnpm astro ...` | Ejecutar comandos de la CLI de Astro |
+
+### 📦 Despliegue
+
+Este proyecto está desplegado en **[Vercel](https://vercel.com)**. Cualquier push a la rama `master` activa un despliegue automático.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by <a href="https://github.com/LUHECU">LUHECU</a></sub>
+</div>
