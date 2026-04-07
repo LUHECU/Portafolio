@@ -1,5 +1,14 @@
 export const PROJECTS_EN = [
     {
+        "id": "0",
+        "title":"Oracle Database Optimization — Chinook ",
+        "description":"SQL performance optimization project using the Chinook database, focused on query tuning and indexing to improve efficiency.",
+        "stack":["Oracle DB", "PL/SQL", "SQL Developer"],
+        "image":"/images/ERD.webp",
+        "status":"Completed",
+        "url":"https://calculo-simple.vercel.app/"
+    },
+    {
         "id": "1",
         "title":"Simple-Calc",
         "description":"Small website made for a former coworker to safe time during a billing process. It retrives the original value from an amount that already includes a 13% VAT.",
@@ -20,6 +29,15 @@ export const PROJECTS_EN = [
 ]
 
 export const PROJECTS_ES = [
+    {
+        "id": "0",
+        "title":"Optimización de Base de Datos Oracle — Chinook",
+        "description":"Proyecto de optimización de rendimiento SQL usando la base de datos Chinook, enfocado en mejorar la eficiencia de consultas e índices.",
+        "stack":["Oracle DB", "PL/SQL", "SQL Developer"],
+        "image":"/images/ERD.webp",
+        "status":"Terminado",
+        "url":"https://github.com/LUHECU/Chinook_Database_Performance_Project"
+    },
     {
         "id": "1",
         "title":"Calculo-Simple",
