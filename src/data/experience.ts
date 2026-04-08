@@ -33,7 +33,7 @@ export const EXPERIENCE_EN = [
         title: "Full Stack Developer",
         company: "Consulting Company",
         location: "Hybrid",
-        date: "Jan 2025 - May 2025",
+        date: "Jul 2025 - May 2025",
         description: [
            {
                 name: "Project 1: ATS Platform (HR SaaS product — greenfield development for a consulting client)",
@@ -64,7 +64,7 @@ export const EXPERIENCE_ES = [
         title: "Desarrollador Full Stack",
         company: "Freelance",
         location: "Remoto",
-        date: "Ago 2025 - Dic 2025",
+        date: "Jul 2025 - Dic 2025",
         description: [
             {
                 name: "Proyecto 1: Chatbot de Atención al Cliente en Instagram (WATI - Producción)",
